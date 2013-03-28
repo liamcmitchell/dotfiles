@@ -50,3 +50,9 @@
 
 [push]
 	default = simple
+
+[credential]
+	helper = osxkeychain
+
+[include]
+	path = ~/.gitconfig-private
