@@ -1,15 +1,8 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="liam"
-
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+# Set theme to blank, define theme further down.
+ZSH_THEME=""
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -39,3 +32,18 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
 
+# Set theme here
+function user_hostname {
+	if [ $USER != 'liam' ] ; then
+		echo "%{$fg[blue]%}%n%{$reset_color%} at %{$fg[blue]%}%m%{$reset_color%} in "
+	fi
+}
+
+PROMPT='$(user_hostname)%{$fg[green]%}${PWD/#$HOME/~}$(git_prompt_info)
+%{$fg_bold[black]%}\$ %{$reset_color%}'
+
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[black]%} on %{$reset_color%}%{$fg[yellow]%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_DIRTY="*"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="?"
+ZSH_THEME_GIT_PROMPT_CLEAN=""
