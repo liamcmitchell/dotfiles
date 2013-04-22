@@ -25,12 +25,12 @@ ZSH_THEME=""
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git ruby rails)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+#export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
 
 # Set theme here
 function user_hostname {
@@ -47,3 +47,5 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="*"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="?"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
